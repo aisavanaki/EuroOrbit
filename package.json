@@ -1,0 +1,6 @@
+{
+  "scripts": {
+  "dev": "tailwindcss -i ./css/master.css -o ./css/output.css --watch"
+}
+}
+
