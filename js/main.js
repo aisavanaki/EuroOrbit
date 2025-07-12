@@ -94,7 +94,7 @@ select.addEventListener('change', () => {
 
 //fetch weather from 7timer api
 async function fetchWeather(lat, lon) {
-  const url = `https://www.7timer.info/bin/api.pl?lon=${lon}&lat=${lat}&product=civillight&output=json`;
+  const url = 'https://www.7timer.info/bin/api.pl?lon=${lon}&lat=${lat}&product=civillight&output=json';
 
   try {
     const response = await fetch(url);
