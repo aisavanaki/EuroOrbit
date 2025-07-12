@@ -92,9 +92,9 @@ select.addEventListener('change', () => {
 });
 
 
-//fetch weather from 7timer api
+//fetch weather from api
 async function fetchWeather(lat, lon) {
-  const url = 'https://www.7timer.info/bin/api.pl?lon=${lon}&lat=${lat}&product=civillight&output=json';
+  const url = `https://www.7timer.info/bin/api.pl?lon=${lon}&lat=${lat}&product=civillight&output=json`;
 
   try {
     const response = await fetch(url);
@@ -107,10 +107,6 @@ async function fetchWeather(lat, lon) {
     alert('Failed to load weather data.');
   }
 }
-
-
-
-
 
 
 
@@ -143,7 +139,7 @@ function displayWeather(dataseries) {
 }
 
 
-//weather title to simple one
+//weather title
 function mapWeatherToSimple(weather){
     const map = {
         clear: 'Clear',
@@ -162,7 +158,7 @@ function mapWeatherToSimple(weather){
     return map[weather] || 'clear';
 }
 
-// Simple weather icon mapping
+//weather icon
 function mapWeatherToIcon(weather) {
   const map = {
     clear: 'clear',
@@ -183,10 +179,10 @@ function mapWeatherToIcon(weather) {
 function formatDate(apiDate) {
   const dateStr = apiDate.toString();
   const year = parseInt(dateStr.slice(0, 4));
-  const month = parseInt(dateStr.slice(4, 6)) - 1; // Months are 0-indexed
+  const month = parseInt(dateStr.slice(4, 6)) - 1;
   const day = parseInt(dateStr.slice(6, 8));
 
   const date = new Date(year, month, day);
-  const options = { day: 'numeric', month: 'long' }; // "7 July"
+  const options = { day: 'numeric', month: 'long' };
   return date.toLocaleDateString('en-US', options);
 }
