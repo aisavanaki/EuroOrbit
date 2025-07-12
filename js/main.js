@@ -131,7 +131,7 @@ function displayWeather(dataseries) {
       <div class="bg-blue-100 rounded-md flex justify-center items-center flex-col p-5 gap-3 text-lg">
         <h4>${formatDate(day.date)}</h4>
         <div><img src="./images/${iconName}.png" alt="${day.weather}"></div>
-        <h5>${day.weather}</h5>
+        <h5>${CustomWeather}</h5>
         <div>
           <h5>LT: ${day.temp2m.min} °C</h5>
           <h5>HT: ${day.temp2m.max} °C</h5>
